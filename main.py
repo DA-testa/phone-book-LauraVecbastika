@@ -15,10 +15,10 @@ def write_responses(result):
     print('\n'.join(result))
 class QueryProcessor:
     def init(self, bucket_count):
-    self.bucket_count = bucket_count
-    self.buckets = [[] for _ in range(bucket_count)]
-    self._prime = 1000000007
-    self._multiplier = 263
+        self.bucket_count = bucket_count
+        self.buckets = [[] for _ in range(bucket_count)]
+        self._prime = 1000000007
+        self._multiplier = 263
     def _hash_func(self, s):
             ans = 0
         for c in reversed(s):
