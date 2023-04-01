@@ -9,6 +9,7 @@ class Query:
 
 def read_queries():
     n = input()
+    n=int(n)
     return [Query(input().split()) for i in range(n)]
 
 def write_responses(result):
