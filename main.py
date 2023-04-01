@@ -20,7 +20,7 @@ class QueryProcessor:
         self._prime = 1000000007
         self._multiplier = 263
     def _hash_func(self, s):
-            ans = 0
+        ans = 0
         for c in reversed(s):
             ans = (ans * self._multiplier + ord(c)) % self._prime
         return ans % self.bucket_count
