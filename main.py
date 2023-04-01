@@ -42,5 +42,5 @@ def process_queries(queries):
             result.append(response)
     return result
 
-if _name_ == '_main_':
+if __name__ == '_main_':
     write_responses(process_queries(read_queries()))
