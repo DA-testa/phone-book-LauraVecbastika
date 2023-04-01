@@ -22,23 +22,27 @@ def process_queries(queries):
         if cur_query.type == 'add':
             # if we already have contact with such number,
             # we should rewrite contact's name
-            for contact in contacts:
-                if contact.number == cur_query.number:
-                    contact.name = cur_query.name
-                    break
-            else: # otherwise, just add it
-                contacts.append(cur_query)
+            #for contact in contacts:
+                #if contact.number == cur_query.number:
+                    #contact.name = cur_query.name
+                   # break
+            #else: # otherwise, just add it
+                #contacts.append(cur_query)
+            contacts[cur_query.number]=cur_query.name
         elif cur_query.type == 'del':
-            for j in range(len(contacts)):
-                if contacts[j].number == cur_query.number:
-                    contacts.pop(j)
-                    break
+            #for j in range(len(contacts)):
+               # if contacts[j].number == cur_query.number:
+                   # contacts.pop(j)
+                    #break
+            if cur_query.number in contacts:
+                del contacts[cur_query.number]
         else:
-            response = 'not found'
-            for contact in contacts:
-                if contact.number == cur_query.number:
-                    response = contact.name
-                    break
+            #response = 'not found'
+            #for contact in contacts:
+               # if contact.number == cur_query.number:
+                    #response = contact.name
+                   # break
+            response=contacts.get(cur_query.number, 'not fount')
             result.append(response)
     return result
 
